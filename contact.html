@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CareerBoost</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" style="text-decoration: none; color: #667eea;">CareerBoost</a></h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="career-acceleration.html" class="nav-link">Career Acceleration</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="insights.html" class="nav-link">Insights</a>
+                <a href="talent-sourcing.html" class="nav-link">For Recruiters</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <button class="btn-primary">Get Started</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get in touch</h1>
+            <p>We're here to help you accelerate your career or transform your hiring process</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Contact details</h2>
+                    <p class="hero-description">
+                        Have questions about CareerBoost? Want to schedule a demo? 
+                        Our team is ready to help you succeed.
+                    </p>
+                    
+                    <div class="contact-info" style="margin-top: 2rem;">
+                        <div class="contact-item" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                            <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-envelope" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; color: #2d3748;">Email</h4>
+                                <p style="margin: 0; color: #666;">hello@careerboost.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                            <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-phone" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; color: #2d3748;">Phone</h4>
+                                <p style="margin: 0; color: #666;">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                            <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-map-marker-alt" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; color: #2d3748;">Address</h4>
+                                <p style="margin: 0; color: #666;">123 Innovation Drive<br>San Francisco, CA 94105</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                            <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-clock" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; color: #2d3748;">Business Hours</h4>
+                                <p style="margin: 0; color: #666;">Monday - Friday: 9:00 AM - 6:00 PM PST<br>Weekend: Emergency support only</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="hero-placeholder">
+                        <i class="fas fa-map"></i>
+                        <p>Office Location Map</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="content-section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Send us a message</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours</p>
+            </div>
+            
+            <div class="hero-content">
+                <div class="form-container" style="flex: 1;">
+                    <form id="contactForm">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="role">I am a... *</label>
+                            <select id="role" name="role" required>
+                                <option value="">Select your role</option>
+                                <option value="job-seeker">Job Seeker</option>
+                                <option value="recruiter">Recruiter/HR Professional</option>
+                                <option value="manager">Hiring Manager</option>
+                                <option value="executive">Executive/Leadership</option>
+                                <option value="student">Student/Recent Graduate</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="demo">Schedule a Demo</option>
+                                <option value="pricing">Pricing Questions</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership Inquiry</option>
+                                <option value="feedback">Product Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell us more about how we can help you..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span>Subscribe to our newsletter for career tips and product updates</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-sidebar" style="flex: 0 0 300px; margin-left: 2rem;">
+                    <div class="content-card">
+                        <h3>Quick Links</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><a href="pricing.html" style="color: #667eea; text-decoration: none;"><i class="fas fa-arrow-right" style="margin-right: 0.5rem;"></i>View Pricing Plans</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="resources.html" style="color: #667eea; text-decoration: none;"><i class="fas fa-arrow-right" style="margin-right: 0.5rem;"></i>Download Resources</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #667eea; text-decoration: none;"><i class="fas fa-arrow-right" style="margin-right: 0.5rem;"></i>Schedule Demo</a></li>
+                            <li><a href="#" style="color: #667eea; text-decoration: none;"><i class="fas fa-arrow-right" style="margin-right: 0.5rem;"></i>Help Center</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h3>Response Time</h3>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                            <i class="fas fa-clock" style="color: #10b981;"></i>
+                            <span>General Inquiries: Within 24 hours</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                            <i class="fas fa-rocket" style="color: #667eea;"></i>
+                            <span>Demo Requests: Within 4 hours</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-exclamation-triangle" style="color: #f59e0b;"></i>
+                            <span>Support Issues: Within 2 hours</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>FAQs</h2>
+                <p>Common questions about CareerBoost and our services</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3><i class="fas fa-question-circle" style="color: #667eea; margin-right: 0.5rem;"></i>How does CareerBoost work?</h3>
+                    <p>CareerBoost uses AI to analyze your career profile and provide personalized recommendations for job search, skill development, and career growth.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3><i class="fas fa-question-circle" style="color: #667eea; margin-right: 0.5rem;"></i>Is there a free trial available?</h3>
+                    <p>Yes! We offer a 14-day free trial for all our plans. No credit card required to get started.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3><i class="fas fa-question-circle" style="color: #667eea; margin-right: 0.5rem;"></i>What industries do you support?</h3>
+                    <p>CareerBoost supports professionals across all industries, with specialized features for tech, healthcare, finance, marketing, and more.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3><i class="fas fa-question-circle" style="color: #667eea; margin-right: 0.5rem;"></i>Can I cancel anytime?</h3>
+                    <p>Absolutely. You can cancel your subscription at any time with no cancellation fees or penalties.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3><i class="fas fa-question-circle" style="color: #667eea; margin-right: 0.5rem;"></i>Do you offer enterprise solutions?</h3>
+                    <p>Yes, we provide custom enterprise solutions for large organizations with dedicated support and custom integrations.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3><i class="fas fa-question-circle" style="color: #667eea; margin-right: 0.5rem;"></i>How secure is my data?</h3>
+                    <p>We use enterprise-grade security measures and are SOC 2 Type II certified. Your data is encrypted and never shared without permission.</p>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 3rem;">
+                <p style="margin-bottom: 1rem;">Need more information?</p>
+                <button class="btn-outline">View All FAQs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="content-section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by industry leaders</h2>
+                <p>Join thousands of professionals and companies using CareerBoost</p>
+            </div>
+            
+            <div class="logos-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; align-items: center; margin-top: 2rem;">
+                <div class="logo-item" style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <i class="fab fa-google" style="font-size: 2rem; color: #4285f4;"></i>
+                    <p style="margin: 0.5rem 0 0 0; font-weight: 500;">Google</p>
+                </div>
+                <div class="logo-item" style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <i class="fab fa-microsoft" style="font-size: 2rem; color: #00a1f1;"></i>
+                    <p style="margin: 0.5rem 0 0 0; font-weight: 500;">Microsoft</p>
+                </div>
+                <div class="logo-item" style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <i class="fab fa-apple" style="font-size: 2rem; color: #333;"></i>
+                    <p style="margin: 0.5rem 0 0 0; font-weight: 500;">Apple</p>
+                </div>
+                <div class="logo-item" style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <i class="fab fa-amazon" style="font-size: 2rem; color: #ff9900;"></i>
+                    <p style="margin: 0.5rem 0 0 0; font-weight: 500;">Amazon</p>
+                </div>
+                <div class="logo-item" style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <i class="fab fa-meta" style="font-size: 2rem; color: #1877f2;"></i>
+                    <p style="margin: 0.5rem 0 0 0; font-weight: 500;">Meta</p>
+                </div>
+                <div class="logo-item" style="text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <i class="fab fa-netflix" style="font-size: 2rem; color: #e50914;"></i>
+                    <p style="margin: 0.5rem 0 0 0; font-weight: 500;">Netflix</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CareerBoost</h3>
+                    <p>AI-powered career acceleration platform helping professionals achieve their goals faster.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="career-acceleration.html">Career Acceleration</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="insights.html">Insights</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>For Recruiters</h4>
+                    <ul>
+                        <li><a href="talent-sourcing.html">Talent Sourcing</a></li>
+                        <li><a href="recruiter-tools.html">Recruiter Tools</a></li>
+                        <li><a href="#">API Integration</a></li>
+                        <li><a href="#">Enterprise Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 CareerBoost. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
