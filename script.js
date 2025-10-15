@@ -168,35 +168,9 @@ document.querySelectorAll('.btn-primary, .btn-secondary, .btn-outline').forEach(
     });
 });
 
-// Add ripple CSS dynamically
+// Add enhanced CSS dynamically
 const style = document.createElement('style');
 style.textContent = `
-    .btn-primary, .btn-secondary, .btn-outline {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        transform: scale(0);
-        animation: ripple-animation 0.6s linear;
-        pointer-events: none;
-    }
-    
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-    
-    .nav-link.active {
-        color: #667eea !important;
-        font-weight: 600;
-    }
-    
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
@@ -246,6 +220,33 @@ style.textContent = `
         display: flex;
         align-items: center;
         gap: 0.3rem;
+    }
+    
+    /* Enhanced form styling */
+    .form-group input.error,
+    .form-group select.error,
+    .form-group textarea.error {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+    
+    /* Loading animation */
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+    
+    .loading-pulse {
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+    
+    /* Smooth transitions for all interactive elements */
+    * {
+        transition: all 0.3s ease;
+    }
+    
+    button, a, .card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 `;
 document.head.appendChild(style);
