@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerBoost - AI-Powered Job Success Platform</title>
+    <meta name="description" content="Transform your career with AI-powered job search tools, resume optimization, interview prep, and career coaching. For job seekers and recruiters.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-light: #8b5cf6;
+    --secondary-color: #10b981;
+    --accent-color: #f59e0b;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+    --background: #ffffff;
+    --background-alt: #f9fafb;
+    --background-dark: #111827;
+    --border-color: #e5e7eb;
+    --border-light: #f3f4f6;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-full: 9999px;
+    
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--space-4);
+}
+
+h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+}
+
+p {
+    margin-bottom: var(--space-4);
+    color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-large {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-base);
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-light);
+    z-index: 1000;
+    transition: all var(--transition-normal);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-4);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-brand i {
+    font-size: var(--font-size-2xl);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: var(--space-1);
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    transition: all var(--transition-fast);
+}
+
+/* Hero Section */
+.hero {
+    padding: calc(80px + var(--space-20)) 0 var(--space-20);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-size: var(--font-size-5xl);
+    margin-bottom: var(--space-6);
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+    line-height: 1.6;
+}
+
+/* User Type Selector */
+.user-type-selector {
+    margin-bottom: var(--space-8);
+}
+
+.selector-tabs {
+    display: flex;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-1);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.tab-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.tab-btn.active {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.trust-indicators {
+    display: flex;
+    gap: var(--space-6);
+    align-items: center;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.trust-item i {
+    color: var(--success);
+}
+
+/* Hero Visual */
+.hero-visual {
+    position: relative;
+}
+
+.dashboard-preview {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+    transition: transform var(--transition-slow);
+}
+
+.dashboard-preview:hover {
+    transform: perspective(1000px) rotateY(-2deg) rotateX(2deg);
+}
+
+.dashboard-header {
+    background: var(--background-alt);
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dashboard-nav {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background: var(--border-color);
+}
+
+.nav-dot:first-child {
+    background: #ef4444;
+}
+
+.nav-dot:nth-child(2) {
+    background: #f59e0b;
+}
+
+.nav-dot:nth-child(3) {
+    background: var(--success);
+}
+
+.dashboard-content {
+    padding: var(--space-6);
+}
+
+.ai-assistant {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+}
+
+.ai-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.ai-message {
+    background: var(--background-alt);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    flex: 1;
+}
+
+.ai-message p {
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+}
+
+.ai-suggestions {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.suggestion {
+    background: var(--primary-color);
+    color: white;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+}
+
+/* Section Styles */
+section {
+    padding: var(--space-20) 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+}
+
+.section-header h2 {
+    margin-bottom: var(--space-4);
+}
+
+.section-header p {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Features Section */
+.features {
+    background: var(--background);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-8);
+}
+
+.feature-card {
+    background: white;
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-6);
+    color: white;
+    font-size: var(--font-size-xl);
+}
+
+.feature-card h3 {
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+}
+
+.feature-card p {
+    margin-bottom: var(--space-6);
+}
+
+.feature-benefits {
+    list-style: none;
+}
+
+.feature-benefits li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.feature-benefits i {
+    color: var(--success);
+    font-size: var(--font-size-xs);
+}
+
+/* How It Works */
+.how-it-works {
+    background: var(--background-alt);
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+    position: relative;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin: 0 auto var(--space-6);
+    box-shadow: var(--shadow-lg);
+}
+
+.step-content h3 {
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+}
+
+.step-content p {
+    color: var(--text-secondary);
+}
+
+/* Pricing Section */
+.pricing {
+    background: var(--background);
+}
+
+.pricing-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-12);
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    background: white;
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.toggle-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.toggle-switch {
+    width: 60px;
+    height: 30px;
+    background: var(--border-color);
+    border-radius: var(--radius-full);
+    position: relative;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.toggle-switch.active {
+    background: var(--primary-color);
+}
+
+.toggle-slider {
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: var(--radius-full);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.toggle-switch.active .toggle-slider {
+    transform: translateX(30px);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-8);
+}
+
+.pricing-card {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    border: 2px solid var(--border-light);
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.pricing-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.pricing-card.featured {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.05);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.pricing-header h3 {
+    margin-bottom: var(--space-2);
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--space-1);
+    margin-bottom: var(--space-2);
+}
+
+.currency {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+}
+
+.amount {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.period {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: var(--space-8);
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+    color: var(--text-secondary);
+}
+
+.pricing-features i.fa-check {
+    color: var(--success);
+}
+
+.pricing-features i.fa-times {
+    color: var(--text-light);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Testimonials */
+.testimonials {
+    background: var(--background-alt);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-8);
+}
+
+.testimonial-card {
+    background: white;
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+}
+
+.testimonial-content {
+    margin-bottom: var(--space-6);
+}
+
+.stars {
+    display: flex;
+    gap: var(--space-1);
+    margin-bottom: var(--space-4);
+    color: var(--accent-color);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    margin-bottom: var(--space-1);
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+}
+
+.author-info p {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: white;
+    margin-bottom: var(--space-4);
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-8);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.cta-buttons .btn-primary {
+    background: white;
+    color: var(--primary-color);
+}
+
+.cta-buttons .btn-primary:hover {
+    background: var(--background-alt);
+}
+
+.cta-buttons .btn-outline {
+    border-color: white;
+    color: white;
+}
+
+.cta-buttons .btn-outline:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+.cta-note {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--font-size-sm);
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    background: var(--background-dark);
+    color: white;
+    padding: var(--space-16) 0 var(--space-8);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--space-4);
+}
+
+.footer-brand i {
+    font-size: var(--font-size-2xl);
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--space-6);
+}
+
+.social-links {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.footer-section h4 {
+    margin-bottom: var(--space-4);
+    color: white;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: var(--space-2);
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--space-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-6);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+    background: var(--background-alt);
+    color: var(--text-primary);
+}
+
+.modal-content {
+    padding: var(--space-6);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: var(--space-4);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.form-input {
+    width: 100%;
+    padding: var(--space-3);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    transition: border-color var(--transition-fast);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-select {
+    width: 100%;
+    padding: var(--space-3);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    background: white;
+    cursor: pointer;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.form-checkbox input {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+        text-align: center;
+    }
+    
+    .hero-text h1 {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: var(--space-6);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        transition: transform var(--transition-normal);
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-buttons {
+        width: 100%;
+        margin-top: var(--space-4);
+    }
+    
+    .hero {
+        padding: calc(80px + var(--space-12)) 0 var(--space-12);
+    }
+    
+    .hero-text h1 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .trust-indicators {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+    
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    section {
+        padding: var(--space-12) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-3);
+    }
+    
+    .hero-text h1 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .btn-large {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--font-size-sm);
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card {
+        padding: var(--space-6);
+    }
+    
+    .modal {
+        width: 95%;
+        margin: var(--space-4);
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+.btn:focus,
+.nav-link:focus,
+.form-input:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-rocket"></i>
+                <span>CareerBoost</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <div class="nav-buttons">
+                    <button class="btn btn-outline" onclick="openModal('login')">Sign In</button>
+                    <button class="btn btn-primary" onclick="openModal('signup')">Get Started</button>
+                </div>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Supercharge Your Career with <span class="gradient-text">AI-Powered</span> Job Success</h1>
+                    <p class="hero-subtitle">From resume optimization to interview mastery, CareerBoost uses cutting-edge AI to accelerate your career growth and connect you with dream opportunities.</p>
+                    
+                    <!-- User Type Selector -->
+                    <div class="user-type-selector">
+                        <div class="selector-tabs">
+                            <button class="tab-btn active" data-type="jobseeker">
+                                <i class="fas fa-user-tie"></i>
+                                Job Seeker
+                            </button>
+                            <button class="tab-btn" data-type="recruiter">
+                                <i class="fas fa-building"></i>
+                                Recruiter
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary btn-large" onclick="openModal('signup')">
+                            Start Free Trial
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-outline btn-large" onclick="scrollToSection('demo')">
+                            Watch Demo
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <i class="fas fa-users"></i>
+                            <span>50K+ Users</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.9/5 Rating</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>SOC 2 Certified</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <div class="dashboard-header">
+                            <div class="dashboard-nav">
+                                <div class="nav-dot"></div>
+                                <div class="nav-dot"></div>
+                                <div class="nav-dot"></div>
+                            </div>
+                        </div>
+                        <div class="dashboard-content">
+                            <div class="ai-assistant">
+                                <div class="ai-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="ai-message">
+                                    <p>I've optimized your resume and found 12 matching opportunities!</p>
+                                    <div class="ai-suggestions">
+                                        <span class="suggestion">Software Engineer</span>
+                                        <span class="suggestion">Product Manager</span>
+                                        <span class="suggestion">Data Scientist</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Five Core Features That Transform Careers</h2>
+                <p>Comprehensive AI-powered tools designed for every stage of your career journey</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1: AI Resume Builder -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>AI Resume Builder</h3>
+                    <p>Create ATS-optimized resumes that get noticed. Our AI analyzes job descriptions and tailors your resume for maximum impact.</p>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> ATS optimization</li>
+                        <li><i class="fas fa-check"></i> Industry-specific templates</li>
+                        <li><i class="fas fa-check"></i> Real-time feedback</li>
+                        <li><i class="fas fa-check"></i> Keyword optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2: Smart Job Matching -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Smart Job Matching</h3>
+                    <p>Discover opportunities that align with your skills and career goals. AI-powered matching saves time and increases success rates.</p>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> Personalized recommendations</li>
+                        <li><i class="fas fa-check"></i> Skills gap analysis</li>
+                        <li><i class="fas fa-check"></i> Salary insights</li>
+                        <li><i class="fas fa-check"></i> Company culture fit</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3: Interview Prep AI -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Interview Prep AI</h3>
+                    <p>Practice with AI-powered mock interviews. Get personalized feedback on your responses, body language, and communication style.</p>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> Mock interview sessions</li>
+                        <li><i class="fas fa-check"></i> Real-time feedback</li>
+                        <li><i class="fas fa-check"></i> Question bank (1000+)</li>
+                        <li><i class="fas fa-check"></i> Performance analytics</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4: Career Path Analytics -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Career Path Analytics</h3>
+                    <p>Visualize your career trajectory with data-driven insights. Understand market trends and plan your next strategic move.</p>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> Career progression mapping</li>
+                        <li><i class="fas fa-check"></i> Market trend analysis</li>
+                        <li><i class="fas fa-check"></i> Skill demand forecasting</li>
+                        <li><i class="fas fa-check"></i> Salary benchmarking</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5: Networking Intelligence -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Networking Intelligence</h3>
+                    <p>Build meaningful professional connections with AI-suggested networking opportunities and conversation starters.</p>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> Connection recommendations</li>
+                        <li><i class="fas fa-check"></i> Conversation starters</li>
+                        <li><i class="fas fa-check"></i> Event suggestions</li>
+                        <li><i class="fas fa-check"></i> Follow-up reminders</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How CareerBoost Works</h2>
+                <p>Three simple steps to accelerate your career success</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Upload & Analyze</h3>
+                        <p>Upload your resume and career goals. Our AI analyzes your profile and identifies opportunities for improvement.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Optimize & Match</h3>
+                        <p>Get personalized recommendations for resume optimization, skill development, and job opportunities that match your profile.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Apply & Succeed</h3>
+                        <p>Apply to jobs with confidence using our optimized materials and interview preparation tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Success Plan</h2>
+                <p>Flexible pricing for job seekers and recruiters at every stage</p>
+            </div>
+
+            <!-- Pricing Toggle -->
+            <div class="pricing-toggle">
+                <div class="toggle-container">
+                    <span class="toggle-label">Job Seekers</span>
+                    <div class="toggle-switch" onclick="togglePricing()">
+                        <div class="toggle-slider"></div>
+                    </div>
+                    <span class="toggle-label">Recruiters</span>
+                </div>
+            </div>
+
+            <!-- Job Seeker Pricing -->
+            <div class="pricing-grid" id="jobseeker-pricing">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">0</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Perfect for getting started</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Basic resume builder</li>
+                        <li><i class="fas fa-check"></i> 5 job applications/month</li>
+                        <li><i class="fas fa-check"></i> Basic interview prep</li>
+                        <li><i class="fas fa-times"></i> AI optimization</li>
+                        <li><i class="fas fa-times"></i> Priority support</li>
+                    </ul>
+                    <button class="btn btn-outline btn-full" onclick="selectPlan('starter')">Get Started Free</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">29</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>For serious job seekers</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> AI-powered resume optimization</li>
+                        <li><i class="fas fa-check"></i> Unlimited job applications</li>
+                        <li><i class="fas fa-check"></i> Advanced interview prep</li>
+                        <li><i class="fas fa-check"></i> Career path analytics</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                    </ul>
+                    <button class="btn btn-primary btn-full" onclick="selectPlan('professional')">Start Free Trial</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Executive</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">99</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>For senior professionals</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Everything in Professional</li>
+                        <li><i class="fas fa-check"></i> 1-on-1 career coaching</li>
+                        <li><i class="fas fa-check"></i> Executive networking</li>
+                        <li><i class="fas fa-check"></i> Salary negotiation support</li>
+                        <li><i class="fas fa-check"></i> White-glove service</li>
+                    </ul>
+                    <button class="btn btn-outline btn-full" onclick="selectPlan('executive')">Contact Sales</button>
+                </div>
+            </div>
+
+            <!-- Recruiter Pricing -->
+            <div class="pricing-grid hidden" id="recruiter-pricing">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Startup</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">99</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>For small teams</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Up to 3 recruiters</li>
+                        <li><i class="fas fa-check"></i> 50 candidate profiles/month</li>
+                        <li><i class="fas fa-check"></i> Basic AI matching</li>
+                        <li><i class="fas fa-check"></i> Standard support</li>
+                        <li><i class="fas fa-times"></i> Advanced analytics</li>
+                    </ul>
+                    <button class="btn btn-outline btn-full" onclick="selectPlan('startup')">Start Trial</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Growth</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">299</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>For growing companies</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Up to 10 recruiters</li>
+                        <li><i class="fas fa-check"></i> 200 candidate profiles/month</li>
+                        <li><i class="fas fa-check"></i> Advanced AI matching</li>
+                        <li><i class="fas fa-check"></i> Analytics dashboard</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                    </ul>
+                    <button class="btn btn-primary btn-full" onclick="selectPlan('growth')">Start Trial</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">999</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>For large organizations</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited recruiters</li>
+                        <li><i class="fas fa-check"></i> Unlimited candidates</li>
+                        <li><i class="fas fa-check"></i> Custom AI models</li>
+                        <li><i class="fas fa-check"></i> Advanced integrations</li>
+                        <li><i class="fas fa-check"></i> Dedicated support</li>
+                    </ul>
+                    <button class="btn btn-outline btn-full" onclick="selectPlan('enterprise')">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>See how CareerBoost has transformed careers across industries</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"CareerBoost's AI helped me land my dream job at Google. The resume optimization and interview prep were game-changers!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face" alt="Sarah Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Chen</h4>
+                            <p>Software Engineer at Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"As a recruiter, CareerBoost has revolutionized how we find and match candidates. Our placement rate increased by 40%."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Michael Rodriguez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Rodriguez</h4>
+                            <p>Senior Recruiter at TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The career path analytics showed me exactly what skills I needed to develop. I got promoted within 6 months!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Emily Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emily Johnson</h4>
+                            <p>Product Manager at Startup Inc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Accelerate Your Career?</h2>
+                <p>Join thousands of professionals who have transformed their careers with CareerBoost's AI-powered platform.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-large" onclick="openModal('signup')">
+                        Start Your Free Trial
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-outline btn-large" onclick="openModal('demo')">
+                        Schedule Demo
+                        <i class="fas fa-calendar"></i>
+                    </button>
+                </div>
+                <p class="cta-note">No credit card required • 14-day free trial • Cancel anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-rocket"></i>
+                        <span>CareerBoost</span>
+                    </div>
+                    <p>AI-powered career acceleration for the modern professional.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 CareerBoost. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modal-overlay" class="modal-overlay" onclick="closeModal()">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 id="modal-title">Sign Up</h3>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content" id="modal-content">
+                <!-- Modal content will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+// CareerBoost Website JavaScript
+
+// DOM Elements
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+const modalOverlay = document.getElementById('modal-overlay');
+const modalTitle = document.getElementById('modal-title');
+const modalContent = document.getElementById('modal-content');
+
+// Navigation Toggle
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+}
+
+// Close mobile menu when clicking on links
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+    });
+});
+
+// User Type Selector
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all tabs
+        document.querySelectorAll('.tab-btn').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        
+        // Add active class to clicked tab
+        btn.classList.add('active');
+        
+        // Update hero content based on selected user type
+        const userType = btn.dataset.type;
+        updateHeroContent(userType);
+    });
+});
+
+// Update hero content based on user type
+function updateHeroContent(userType) {
+    const heroTitle = document.querySelector('.hero-text h1');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    
+    if (userType === 'recruiter') {
+        heroTitle.innerHTML = 'Find Top Talent with <span class="gradient-text">AI-Powered</span> Recruitment';
+        heroSubtitle.textContent = 'Streamline your hiring process with intelligent candidate matching, automated screening, and data-driven insights to build exceptional teams faster.';
+    } else {
+        heroTitle.innerHTML = 'Supercharge Your Career with <span class="gradient-text">AI-Powered</span> Job Success';
+        heroSubtitle.textContent = 'From resume optimization to interview mastery, CareerBoost uses cutting-edge AI to accelerate your career growth and connect you with dream opportunities.';
+    }
+}
+
+// Pricing Toggle
+function togglePricing() {
+    const toggle = document.querySelector('.toggle-switch');
+    const jobseekerPricing = document.getElementById('jobseeker-pricing');
+    const recruiterPricing = document.getElementById('recruiter-pricing');
+    
+    toggle.classList.toggle('active');
+    
+    if (toggle.classList.contains('active')) {
+        jobseekerPricing.classList.add('hidden');
+        recruiterPricing.classList.remove('hidden');
+    } else {
+        jobseekerPricing.classList.remove('hidden');
+        recruiterPricing.classList.add('hidden');
+    }
+}
+
+// Modal Functions
+function openModal(type) {
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    switch (type) {
+        case 'signup':
+            showSignupModal();
+            break;
+        case 'login':
+            showLoginModal();
+            break;
+        case 'demo':
+            showDemoModal();
+            break;
+        default:
+            showSignupModal();
+    }
+}
+
+function closeModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+function showSignupModal() {
+    modalTitle.textContent = 'Start Your Free Trial';
+    modalContent.innerHTML = `
+        <form class="signup-form" onsubmit="handleSignup(event)">
+            <div class="form-group">
+                <label class="form-label">I am a:</label>
+                <select class="form-select" name="userType" required>
+                    <option value="">Select your role</option>
+                    <option value="jobseeker">Job Seeker</option>
+                    <option value="recruiter">Recruiter</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-input" name="fullName" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-input" name="email" required placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-input" name="password" required placeholder="Create a password">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Company (Optional)</label>
+                <input type="text" class="form-input" name="company" placeholder="Your company name">
+            </div>
+            
+            <div class="form-checkbox">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#" style="color: var(--primary-color);">Terms of Service</a> and <a href="#" style="color: var(--primary-color);">Privacy Policy</a></label>
+            </div>
+            
+            <div class="form-checkbox">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Send me updates about new features and career tips</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full">
+                Start Free Trial
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            
+            <p style="text-align: center; margin-top: var(--space-4); color: var(--text-secondary);">
+                Already have an account? <a href="#" onclick="showLoginModal()" style="color: var(--primary-color);">Sign in</a>
+            </p>
+        </form>
+    `;
+}
+
+function showLoginModal() {
+    modalTitle.textContent = 'Welcome Back';
+    modalContent.innerHTML = `
+        <form class="login-form" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-input" name="email" required placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-input" name="password" required placeholder="Enter your password">
+            </div>
+            
+            <div class="form-checkbox">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember me</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full">
+                Sign In
+                <i class="fas fa-sign-in-alt"></i>
+            </button>
+            
+            <p style="text-align: center; margin-top: var(--space-4); color: var(--text-secondary);">
+                <a href="#" style="color: var(--primary-color);">Forgot your password?</a>
+            </p>
+            
+            <p style="text-align: center; margin-top: var(--space-2); color: var(--text-secondary);">
+                Don't have an account? <a href="#" onclick="showSignupModal()" style="color: var(--primary-color);">Sign up</a>
+            </p>
+        </form>
+    `;
+}
+
+function showDemoModal() {
+    modalTitle.textContent = 'Schedule Your Demo';
+    modalContent.innerHTML = `
+        <form class="demo-form" onsubmit="handleDemo(event)">
+            <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-input" name="fullName" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-input" name="email" required placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-input" name="phone" placeholder="Enter your phone number">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Company</label>
+                <input type="text" class="form-input" name="company" required placeholder="Your company name">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Company Size</label>
+                <select class="form-select" name="companySize" required>
+                    <option value="">Select company size</option>
+                    <option value="1-10">1-10 employees</option>
+                    <option value="11-50">11-50 employees</option>
+                    <option value="51-200">51-200 employees</option>
+                    <option value="201-1000">201-1000 employees</option>
+                    <option value="1000+">1000+ employees</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Preferred Demo Time</label>
+                <select class="form-select" name="demoTime" required>
+                    <option value="">Select preferred time</option>
+                    <option value="morning">Morning (9 AM - 12 PM)</option>
+                    <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
+                    <option value="evening">Evening (5 PM - 8 PM)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">What would you like to see? (Optional)</label>
+                <textarea class="form-input" name="interests" rows="3" placeholder="Tell us about your specific interests or use cases..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full">
+                Schedule Demo
+                <i class="fas fa-calendar"></i>
+            </button>
+        </form>
+    `;
+}
+
+// Form Handlers
+function handleSignup(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    
+    // Simulate API call
+    showLoadingState(event.target);
+    
+    setTimeout(() => {
+        console.log('Signup data:', data);
+        showSuccessMessage('Account created successfully! Check your email to verify your account.');
+        closeModal();
+    }, 2000);
+}
+
+function handleLogin(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    
+    // Simulate API call
+    showLoadingState(event.target);
+    
+    setTimeout(() => {
+        console.log('Login data:', data);
+        showSuccessMessage('Welcome back! Redirecting to your dashboard...');
+        closeModal();
+    }, 1500);
+}
+
+function handleDemo(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    
+    // Simulate API call
+    showLoadingState(event.target);
+    
+    setTimeout(() => {
+        console.log('Demo request:', data);
+        showSuccessMessage('Demo scheduled! We\'ll send you a calendar invite within 24 hours.');
+        closeModal();
+    }, 2000);
+}
+
+function showLoadingState(form) {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+    submitBtn.disabled = true;
+    
+    // Store original text for restoration
+    submitBtn.dataset.originalText = originalText;
+}
+
+function showSuccessMessage(message) {
+    // Create and show a toast notification
+    const toast = document.createElement('div');
+    toast.className = 'toast success';
+    toast.innerHTML = `
+        <i class="fas fa-check-circle"></i>
+        <span>${message}</span>
+    `;
+    
+    // Add toast styles if not already present
+    if (!document.querySelector('.toast-container')) {
+        const toastContainer = document.createElement('div');
+        toastContainer.className = 'toast-container';
+        document.body.appendChild(toastContainer);
+        
+        // Add toast styles
+        const toastStyles = `
+            <style>
+                .toast-container {
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    z-index: 3000;
+                }
+                
+                .toast {
+                    display: flex;
+                    align-items: center;
+                    gap: var(--space-2);
+                    padding: var(--space-4);
+                    margin-bottom: var(--space-2);
+                    border-radius: var(--radius-md);
+                    box-shadow: var(--shadow-lg);
+                    min-width: 300px;
+                    animation: slideInRight 0.3s ease-out;
+                }
+                
+                .toast.success {
+                    background: var(--success);
+                    color: white;
+                }
+                
+                @keyframes slideInRight {
+                    from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            </style>
+        `;
+        document.head.insertAdjacentHTML('beforeend', toastStyles);
+    }
+    
+    document.querySelector('.toast-container').appendChild(toast);
+    
+    // Remove toast after 5 seconds
+    setTimeout(() => {
+        toast.remove();
+    }, 5000);
+}
+
+// Plan Selection
+function selectPlan(planName) {
+    console.log('Selected plan:', planName);
+    
+    // Simulate plan selection logic
+    if (planName === 'starter') {
+        openModal('signup');
+    } else if (planName === 'enterprise') {
+        openModal('demo');
+    } else {
+        openModal('signup');
+    }
+}
+
+// Smooth Scrolling
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Navbar Scroll Effect
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        navbar.style.boxShadow = 'var(--shadow-md)';
+    } else {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = 'none';
+    }
+});
+
+// Intersection Observer for Animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-up');
+        }
+    });
+}, observerOptions);
+
+// Observe elements for animation
+document.addEventListener('DOMContentLoaded', () => {
+    const animateElements = document.querySelectorAll(
+        '.feature-card, .step, .pricing-card, .testimonial-card'
+    );
+    
+    animateElements.forEach(el => {
+        observer.observe(el);
+    });
+});
+
+// Keyboard Navigation
+document.addEventListener('keydown', (e) => {
+    // Close modal on Escape key
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+        closeModal();
+    }
+    
+    // Toggle mobile menu on Enter when nav toggle is focused
+    if (e.key === 'Enter' && document.activeElement === navToggle) {
+        navToggle.click();
+    }
+});
+    </script>
+</body>
+</html>
